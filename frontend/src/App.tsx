@@ -1,11 +1,11 @@
+import NavHeader from './components/nav';
 
+const navOptions = ['Home', 'About', 'Blog', 'Help'];
 
 function App() {
-
-  
   return (
-    <div className="min-h-screen bg-white p-8">
-      <h1 className="text-4xl font-bold mb-4">Welcome to the project</h1>
+    <div>
+      <NavHeader logo="WAG!" options={navOptions} />
     </div>
   );
 }
