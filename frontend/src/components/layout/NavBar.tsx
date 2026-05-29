@@ -13,27 +13,26 @@ export default function NavHeader(props: NavHeaderProps) {
 
 
         {/* Logo */}
-        <div className="flex items-center">
+        <div className="flex ">
           <h1 className="text-2xl font-bold">{props.logo}</h1>
         </div>
 
 
-
-
-        {/* Navigation Links */}
-        <ul className="hidden md:flex items-center gap-8">
-
-          {props.options.map((index) => (
-            <li key={index}>
-              <a
-                href={`#${index.toLowerCase()}`}
-                className="font-bold text-[var(--dark-text)] hover:text-[var(--orange-color)] transition-colors"
-              >
-                {index}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {/* Navigation Links centered */}
+        <div className="flex-1 flex justify-center">
+          <ul className="hidden md:flex items-center gap-8">
+            {props.options.map((index) => (
+              <li key={index}>
+                <a
+                  href={`#${index.toLowerCase()}`}
+                  className="font-bold text-[var(--dark-text)] hover:text-[var(--orange-color)] transition-colors"
+                >
+                  {index}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
 
         {/* Mobile Menu Button (opcional) */}
         <button className="md:hidden text-gray-700">

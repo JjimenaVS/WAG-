@@ -1,4 +1,4 @@
-import NavHeader from './components/nav';
+import NavHeader from './components/layout/NavBar';
 
 const navOptions = ['Home', 'About', 'Blog', 'Help'];
 
