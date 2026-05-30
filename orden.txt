@@ -17,7 +17,7 @@ frontend/
     │
     ├── pages/                   # Una carpeta por página/ruta
     │   ├── Home/
-    │   │   ├── index.tsx        # Punto de entrada de la página
+    │   │   ├── landing.tsx        # Punto de entrada de la página
     │   │   └── sections/        # Secciones exclusivas de Home
     │   │       ├── HeroBanner.tsx
     │   │       ├── Features.tsx

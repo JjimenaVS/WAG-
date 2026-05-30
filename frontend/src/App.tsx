@@ -1,13 +1,12 @@
-import Footer from './components/layout/Footer';
-import NavHeader from './components/layout/NavBar';
+import Landing from "./components/pages/Home/Landing";
 
-const navOptions = ['Home', 'About', 'Blog', 'Help'];
 
 function App() {
   return (
     <div>
-      <NavHeader logo="WAG!" options={navOptions} />
-      <Footer logo="WAG!" options={navOptions} socialMedia={[]} />
+      
+    <Landing></Landing>
+       
     </div>
 
 
