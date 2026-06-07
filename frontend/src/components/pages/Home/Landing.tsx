@@ -12,7 +12,7 @@ export default function Landing(props: LandingProps) {
     return (
         <div> 
             <NavHeader  logo="WAG!" options={navOptions}  />
-            <LandingHeroBanner title="Your Pet Friendly Web" image="/path/to/hero-image.jpg" />
+            <LandingHeroBanner title="Your Pet Friendly Web" />
             <Footer logo="WAG!" options={navOptions} socialMedia={[]} />
         </div>
     );
