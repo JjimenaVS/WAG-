@@ -14,22 +14,6 @@ export default function Footer(props: FooterProps) {
           <h1 className="text-2xl font-bold">{props.logo}</h1>
         </div>
 
-        {/* Navigation Links centered */}
-        <div className="flex w-full justify-center">
-          <ul className="hidden items-center gap-5 md:flex">
-            {props.options.map((index) => (
-              <li key={index}>
-                <a
-                  href={`#${index.toLowerCase()}`}
-                  className="font-bold text-(--dark-text) hover:text-(--orange-color) transition-colors"
-                >
-                  {index}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
         {/* Social Media Icons */}
         <div className="flex items-center gap-8">
           {/* Instagram */}

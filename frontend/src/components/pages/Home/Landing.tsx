@@ -1,5 +1,5 @@
-import NavHeader from "../../layout/NavBar";
-import Footer from "../../layout/Footer";
+import NavHeader from "../../ui/NavBar";
+import Footer from "../../ui/Footer";
 import LandingHeroBanner from "./LandingHeroBanner";
 
 interface LandingProps {

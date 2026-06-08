@@ -42,8 +42,6 @@ export default function NavHeader(props: NavHeaderProps) {
             </svg>
           </button>
 
-          
-
           <button
             type="button"
             aria-label="Perfil de usuario"
