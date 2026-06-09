@@ -22,20 +22,24 @@ export default function Login() {
   };
 
   return (
-    <>
+    <div>
       <NavHeader logo="WAG!" options={[]} />
 
-      <section className="min-h-[calc(100vh-80px)] flex">
-        {/* LEFT SIDE */}
-        <div className="flex-2 bg-(--blue-color)">
-          <div className="text-black flex flex-col items-center justify-center my-10">
-            <h2 className="text-4xl font-bold mb-4">LOG IN</h2>
 
-            <p className="text-lg opacity-90 m-1">
-              Log in now to comment, rate and enjoy everything Wag! got for you!
+      <div className= "flex justify-center bg-(--blue-color) pt-2">
+
+      <section className="min-h-[calc(100vh-80px)] flex w-300">
+        {/* LEFT SIDE */}
+
+        <div className="flex-2 bg-(--blue-color)">
+          <div className="text-[var(--dark-color)] flex flex-col pr-60 my-10 ">
+            <h2 className="text-4xl font-extrabold mb-4 text-[var(--dark-color)]">LOG IN</h2>
+
+            <p className="text-2xl opacity-90 m-1 text-[var(--dark-color)]  mb-10 font-medium">
+              Log in now to comment, rate and enjoy everything  <span className="font-bold">WAG!</span> got for you!
             </p>
 
-            <p className="text-lg opacity-90 mt-1">
+            <p className="text-2xl opacity-90 mt-1 text-[var(--dark-color)] font-medium">
               We are the pet friendly web that cares about your dog as much as
               you do!
             </p>
@@ -43,24 +47,27 @@ export default function Login() {
 
           <img
             src={perroLog}
-            alt="Cat"
-            className="block w-[461px] max-w-none"
+            alt="Dog"
+            className="block w-[780px] max-w-none mx-auto pr-40"
           />
         </div>
+
+
+
 
         {/* RIGHT SIDE */}
         <div className="flex-3 bg-(--blue-color) flex flex-col items-center justify-center">
           <div>
             <div className="mb-8 text-center">
-              <h1 className="text-4xl font-bold text-gray-800">WAG!</h1>
+              <h1 className="text-4xl font-extrabold text-[var(--dark-color)]">WAG!</h1>
 
-              <p className="text-gray-500 mt-2">Sign in to your account</p>
+              <p className="text-[var(--dark-color)] mt-2">Sign in to your account</p>
             </div>
 
             <div className="rounded-3xl p-8 bg-(--primary-color) min-w-[500px]">
               <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-medium text-gray-700">
+                  <label className="text-sm font-medium text-[var(--dark-color)]">
                     Email
                   </label>
 
@@ -78,7 +85,7 @@ export default function Login() {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-medium text-gray-700">
+                  <label className="text-sm font-medium text-[var(--dark-color)]">
                     Password
                   </label>
 
@@ -108,7 +115,7 @@ export default function Login() {
                 <div className="text-right">
                   <button
                     type="button"
-                    className="text-(--blue-color) text-sm font-medium hover:underline"
+                    className="text-(--orange-color) text-sm font-medium hover:underline"
                   >
                     Forgot Password?
                   </button>
@@ -121,9 +128,9 @@ export default function Login() {
                   Sign In
                 </button>
 
-                <p className="text-center text-gray-600 mt-4">
+                <p className="text-center text-[var(--dark-color)] mt-4">
                   Don't have an account?{" "}
-                  <span className="text-(--blue-color) font-semibold cursor-pointer hover:underline">
+                  <span className="text-(--orange-color) font-semibold cursor-pointer hover:underline">
                     Create one now!
                   </span>
                 </p>
@@ -132,6 +139,7 @@ export default function Login() {
           </div>
         </div>
       </section>
-    </>
+      </div>
+    </div>
   );
 }

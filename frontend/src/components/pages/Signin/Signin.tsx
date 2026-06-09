@@ -34,22 +34,30 @@ export default function Register() {
   };
 
   return (
-    <>
+    <div>
       <NavHeader logo="WAG!" options={[]} />
 
-      <section className="min-h-[calc(100vh-80px)] flex">
+      <div className= "flex justify-center bg-(--orange-color) pt-2">
+
+      
+      <section className="min-h-[calc(100vh-80px)] flex w-300 ">
+
+
+        
         {/* LEFT SIDE */}
+
         <div className="flex-2 bg-(--orange-color)">
-          <div className="text-[var(--dark-color)] flex flex-col pl-20 my-10">
-            <h2 className="text-4xl font-bold mb-4 text-[var(--dark-color)]">
+          <div className="text-[var(--dark-color)] flex flex-col pr-60 my-10 ">
+            <h2 className="text-4xl font-extrabold mb-4 text-[var(--dark-color)]">
               SIGN IN
             </h2>
 
-            <p className="text-2xl opacity-90 m-1 text-[var(--dark-color)]  mb-10">
+            <p className="text-2xl opacity-90 m-1 text-[var(--dark-color)]  mb-10 font-medium">
               Sign in now to comment, rate and discover everything{" "}
               <span className="font-bold">WAG!</span> got for you!
             </p>
-            <p className="text-2xl opacity-90 mt-1 text-[var(--dark-color)] ">
+
+            <p className="text-2xl opacity-90 mt-1 text-[var(--dark-color)] font-medium">
               We are the pet friendly web that cares about your pet as much as
               you do!
             </p>
@@ -58,15 +66,17 @@ export default function Register() {
           <img
             src={gatoSign}
             alt="Cat"
-            className="block w-[780px] max-w-none mx-auto"
+            className="block w-[780px] max-w-none mx-auto pr-40"
           />
         </div>
 
+
+
         {/* RIGHT SIDE */}
         <div className="flex-3 bg-(--orange-color) flex flex-col items-center justify-center ">
-          <div className="">
+          <div >
             <div className="mb-8 text-center">
-              <h1 className="text-4xl font-bold text-[var(--dark-color)] ">
+              <h1 className="text-4xl font-extrabold text-[var(--dark-color)] ">
                 WAG!
               </h1>
 
@@ -160,7 +170,7 @@ export default function Register() {
 
                 <button
                   type="submit"
-                  className="bg-(--bright-orange) text-white py-3 rounded-xl font-semibold hover:opacity-90 transition"
+                  className="bg-(--bright-orange) text-[var(--main-color)] py-3 rounded-4xl font-semibold hover:opacity-90 transition"
                 >
                   Register
                 </button>
@@ -176,6 +186,7 @@ export default function Register() {
           </div>
         </div>
       </section>
-    </>
+      </div>
+    </div>
   );
 }
