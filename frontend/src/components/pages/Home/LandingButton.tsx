@@ -9,7 +9,7 @@ export default function LandingButton(props: LandingButtonProps) {
   return (
 <div>
     {props.type === 'large' && (
-      <button className="bg-[var(--orange-color)] text-[var(--primary-color)] px-20 py-2 mt-5 font-bold rounded-3xl hover:bg-[var(--primary-color)] transition-colors cursor-pointer hover:text-[var(--dark-text)]">
+      <button className="bg-[var(--orange-color)] text-[var(--primary-color)] px-30 py-4 mt-5 font-bold rounded-4xl hover:bg-[var(--primary-color)] transition-colors cursor-pointer hover:text-[var(--dark-text)] text-lg mb-10">
         {props.text}
       </button>
     )}
