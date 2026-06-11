@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import NavHeader from "../../ui/NavBar";
 import perroLog from "./../../../assets/images/perroLog.png";
+import ojoTrue from "./../../../assets/images/ojoTrue.png";
+import ojoFalse from "./../../../assets/images/ojoFalse.png";
 
 interface LoginForm {
   email: string;
@@ -107,7 +109,11 @@ export default function Login() {
                       onClick={() => setShowPassword(!showPassword)}
                       className="absolute right-4 top-1/2 -translate-y-1/2"
                     >
-                      👁️
+                      <img
+                        src={showPassword ? ojoTrue : ojoFalse}
+                        alt={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+                        className="h-6 w-6"
+                      />
                     </button>
                   </div>
                 </div>

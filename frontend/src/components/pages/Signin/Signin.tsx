@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import NavHeader from "../../ui/NavBar";
 import gatoSign from "./../../../assets/images/gatoSign.png"; // tu imagen
+import ojoTrue from "./../../../assets/images/ojoTrue.png";
+import ojoFalse from "./../../../assets/images/ojoFalse.png";
 
 interface UserForm {
   name: string;
@@ -138,7 +140,11 @@ export default function Register() {
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-4 top-1/2 -translate-y-1/2"
                   >
-                    👁️
+                    <img
+                      src={showPassword ? ojoTrue : ojoFalse}
+                      alt={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+                      className="h-6 w-6"
+                    />
                   </button>
                 </div>
 
@@ -164,7 +170,11 @@ export default function Register() {
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                     className="absolute right-4 top-1/2 -translate-y-1/2"
                   >
-                    👁️
+                    <img
+                      src={showConfirmPassword ? ojoTrue : ojoFalse}
+                      alt={showConfirmPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+                      className="h-6 w-6"
+                    />
                   </button>
                 </div>
 
