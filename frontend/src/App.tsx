@@ -1,11 +1,21 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { TanStackRouterVite } from '@tanstack/router-plugin/vite'
+import Landing from "./components/pages/Home/Landing";
+import Signin from "./components/pages/Signin/Signin";
+import Login from "./components/pages/Login/Login";
 
-export default defineConfig({
-  plugins: [
-    TanStackRouterVite(), // debe ir ANTES de react()
-    react(),
-  ],
-})
 
+
+function App() {
+  return (
+    <div>
+      
+    {/*<Signin></Signin>*/}
+    {/*<Login></Login>*/}
+    <Landing></Landing>
+       
+    </div>
+
+
+  );
+}
+
+export default App;
