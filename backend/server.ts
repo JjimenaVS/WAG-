@@ -1,11 +1,13 @@
 import app from './src/app';
 import env from './env';
 //import created routes
-import productsRoutes from './src/routes/authRoute';
+import productsRoutes from './src/routes/authRoutes';
 
+import authRoutes from './src/routes/authRoutes';
 
+app.use('/api/auth', authRoutes);
 //use routes
-app.use('/api/products', productsRoutes);
+
 
 
 app.use('/api', (req, res) =>{
