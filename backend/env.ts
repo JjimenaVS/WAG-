@@ -5,21 +5,15 @@
 /*
     Zod is a TypeScript-first validation library. Define a schema and parse some data with it. You'll get back a strongly typed, validated result.
 */
-//excepcion de advertencia:
 // @ts-ignore
 import {env as loadEnv} from 'custom-env';
 import { z } from 'zod';
-//con esto i,portamos las dos librerias de importancia
-//zod para validaciones
-
 
 /*
     This line sets up a default value for the APP_STAGE environment variable using a common JavaScript pattern called "short-circuit evaluation" or the "OR operator default pattern". It ensures that APP_STAGE always has a value, even if it wasn't defined in your environment configuration.
 
     The expression process.env.APP_STAGE || 'dev' works by checking if process.env.APP_STAGE already has a truthy value. If APP_STAGE was defined in your .env file or system environment variables, it will use that existing value. However, if APP_STAGE is undefined, null, an empty string, or any other falsy value, the OR operator (||) will "short-circuit" and use the fallback value 'dev' instead.
 */
-//objeto global dentro de node, disponible sin import
- 
 process.env.APP_STAGE = process.env.APP_STAGE || 'dev';
 
 /*
@@ -51,16 +45,16 @@ if (isProduction) {
 */
 const envSchema = z.object({
     NODE_ENV: z
-        .enum(['production', 'dev', 'development', 'test'])
+        .enum(['production', 'dev', 'test'])
         .default('dev'),
     
     APP_STAGE: z
-        .enum(['production', 'dev', 'development', 'test'])
+        .enum(['production', 'dev', 'test'])
         .default('dev'),
     
     PORT: z.coerce.number().positive().default(3000),
 
-    MONGO_URI: z.string().startsWith('mongodb://').or(z.string().startsWith('mongodb+srv://')),
+    DATABASE_URL: z.string().startsWith('postgresql://'),
 
     //JWT_SECRET: z.string().min(32, 'JWT_SECRET must be at least 32 characters long'),
     JWT_EXPIRES_IN: z.string().default('1h'),
