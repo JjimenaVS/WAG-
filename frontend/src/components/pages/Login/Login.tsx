@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import NavHeader from "../../ui/NavBar";
-import perroLog from "./../../../assets/images/perroLog.png";
-import ojoTrue from "./../../../assets/images/ojoTrue.png";
-import ojoFalse from "./../../../assets/images/ojoFalse.png";
+
+//el import no hace falta como tal pero es para que sea mas legible el codigo por que maneja condicionales, lo mismo con los bg
+const ojoTrue = "https://res.cloudinary.com/dnxlfdsh5/image/upload/v1781315263/ojoTrue_qro4zj.png";
+const ojoFalse = "https://res.cloudinary.com/dnxlfdsh5/image/upload/v1781315262/ojoFalse_mdgqlq.png";
+
 
 interface LoginForm {
   email: string;
@@ -48,7 +50,7 @@ export default function Login() {
           </div>
 
           <img
-            src={perroLog}
+            src="https://res.cloudinary.com/dnxlfdsh5/image/upload/v1781315264/PerroLog_vriadp.png"
             alt="Dog"
             className="block w-[780px] max-w-none mx-auto pr-40"
           />

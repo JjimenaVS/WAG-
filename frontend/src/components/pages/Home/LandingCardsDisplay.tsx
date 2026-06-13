@@ -1,4 +1,4 @@
-import background from "../../../assets/images/confetiNaranja.png";
+const background = "https://res.cloudinary.com/dnxlfdsh5/image/upload/v1781315263/confetiNaranja_ore6k2.png";
 
 export default function LandingCardsDisplay() {
     return(

@@ -1,4 +1,4 @@
-import DefaultProfile from '../../assets/images/DefaultProfile.jpg';
+
 
 interface NavHeaderProps {
   logo: string;
@@ -48,7 +48,7 @@ export default function NavHeader(props: NavHeaderProps) {
             className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full hover:cursor-pointer"
           >
             <img
-              src={DefaultProfile}
+              src="https://res.cloudinary.com/dnxlfdsh5/image/upload/v1781315263/DefaultProfile_sg1tl3.jpg"
               alt="Foto de perfil"
               className="h-full w-full object-cover"
             />

@@ -1,5 +1,4 @@
-import pets from "../../../assets/images/PETS.png";
-import separator from "../../../assets/images/separadorhuella.png";
+
 
 export default function LandingWhy() {
   return (
@@ -12,7 +11,7 @@ export default function LandingWhy() {
         
         {/* separador de arriba*/}
         <img
-          src={separator}
+          src="https://res.cloudinary.com/dnxlfdsh5/image/upload/v1781315264/separadorhuella_icyhz1.png"
           alt="Separator, horizontal orange line with a dog paw print in the center (dog paw print: heart-shaped palm with 4 small toes on top)"
           className="mx-auto my-10 w-[1000px] max-w-none"
         ></img>
@@ -21,7 +20,7 @@ export default function LandingWhy() {
           {/* imagen de la izquierda*/}
           <div>
             <img
-              src={pets}
+              src="https://res.cloudinary.com/dnxlfdsh5/image/upload/v1781315264/PETS_iu7i6x.png"
               alt="hamster,bird,dog and cat togheter in a 4 image mosaico"
               className="w-[400px] "
             />
@@ -53,7 +52,7 @@ export default function LandingWhy() {
 
         {/* separador de abajo*/}
         <img
-          src={separator}
+          src="https://res.cloudinary.com/dnxlfdsh5/image/upload/v1781315264/separadorhuella_icyhz1.png"
           alt="Separator, horizontal orange line with a dog paw print in the center (dog paw print: heart-shaped palm with 4 small toes on top)"
           className="mx-auto my-10 w-[1000px] max-w-none"
         ></img>

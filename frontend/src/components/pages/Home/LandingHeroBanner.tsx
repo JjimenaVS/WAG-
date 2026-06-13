@@ -1,6 +1,6 @@
 import LandingButton from "./LandingButton";
-import fluffyDog from "../../../assets/images/flufflyDog.png";
-import orangeCat from "../../../assets/images/orangeCat.png";
+
+
 
 interface LandingHeroBannerProps {
   title: string;
@@ -30,12 +30,12 @@ export default function LandingHeroBanner(props:LandingHeroBannerProps) {
         {/* Columna 3*/}
         <div className="absolute bottom-0 right-0 w-1/3 h-[120%] flex items-end justify-center">
           <img
-            src={orangeCat}
+            src="https://res.cloudinary.com/dnxlfdsh5/image/upload/v1781315263/orangeCat_ifdqop.png"
             alt="Gato naranja"
             className="z-20 h-[90%] w-auto object-contain object-bottom"
           />
           <img
-            src={fluffyDog}
+            src="https://res.cloudinary.com/dnxlfdsh5/image/upload/v1781315263/flufflyDog_fji2nt.png"
             alt="Perro"
             className="z-10 h-[110%] w-auto object-contain object-bottom -scale-x-110 -ml-20"
           />

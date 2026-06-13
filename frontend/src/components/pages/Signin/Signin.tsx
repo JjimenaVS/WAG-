@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import NavHeader from "../../ui/NavBar";
-import gatoSign from "./../../../assets/images/gatoSign.png"; // tu imagen
-import ojoTrue from "./../../../assets/images/ojoTrue.png";
-import ojoFalse from "./../../../assets/images/ojoFalse.png";
+
+
+//el import no hace falta como tal pero es para que sea mas legible el codigo por que maneja condicionales, lo mismo con los bg
+const ojoTrue = "https://res.cloudinary.com/dnxlfdsh5/image/upload/v1781315263/ojoTrue_qro4zj.png";
+const ojoFalse = "https://res.cloudinary.com/dnxlfdsh5/image/upload/v1781315262/ojoFalse_mdgqlq.png";
 
 interface UserForm {
   name: string;
@@ -66,7 +68,7 @@ export default function Register() {
           </div>
 
           <img
-            src={gatoSign}
+            src="https://res.cloudinary.com/dnxlfdsh5/image/upload/v1781315265/gatoSign_ayklkt.png"
             alt="Cat"
             className="block w-[780px] max-w-none mx-auto pr-40"
           />
