@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "@tanstack/react-query": "^5.101.0",
-    "@tanstack/react-router": "^1.170.15"
+    "@tanstack/react-router": "^1.170.15",
+    "react-router-dom": "^7.17.0"
   },
   "devDependencies": {
     "@tanstack/router-cli": "^1.167.17",
