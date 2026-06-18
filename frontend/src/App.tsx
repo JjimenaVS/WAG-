@@ -8,11 +8,8 @@ import BlogDisplay from "./components/pages/Blog/BlogDisplay";
 
 function App() {
   return (
-    <div>
-    
-    <Landing />
-
-    
+    <div>  
+      <Signin></Signin> 
     {/* <Signin></Signin> */}
     {/* <BlogDisplay> */}
     {/* <AboutDisplay />*/}

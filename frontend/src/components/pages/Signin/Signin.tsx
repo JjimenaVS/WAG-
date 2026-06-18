@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NavHeader from "../../ui/NavBar";
+import { registerUser, ApiError } from "../../../utils/api";
 
 
 //el import no hace falta como tal pero es para que sea mas legible el codigo por que maneja condicionales, lo mismo con los bg
@@ -25,16 +26,49 @@ export default function Register() {
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setErrorMessage(null);
 
     if (user.password !== user.confirmPassword) {
-      alert("Passwords do not match");
+      setErrorMessage("Passwords do not match");
       return;
     }
 
-    console.log(user);
+    setIsSubmitting(true);
+
+    try {
+      const response = await registerUser({
+        name: user.name,
+        email: user.email,
+        phone:user.phone,
+        password: user.password,
+      });
+
+      // Guardamos el token mientras conectamos el Context API de auth.
+      // Mas adelante esto se debe mover a un AuthContext / TanStack Query.
+      localStorage.setItem("wag_token", response.token);
+
+      console.log("Usuario registrado:", response.user);
+
+    } catch (error) {
+      if (error instanceof ApiError) {
+        if (error.status === 409) {
+          setErrorMessage("This email is already registered.");
+        } else if (error.body.errors?.length) {
+          setErrorMessage(error.body.errors[0].message);
+        } else {
+          setErrorMessage(error.body.message);
+        }
+      } else {
+        setErrorMessage("Could not connect to the server. Please try again.");
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -180,11 +214,18 @@ export default function Register() {
                   </button>
                 </div>
 
+                {errorMessage && (
+                  <p className="text-red-600 text-sm text-center -mb-2">
+                    {errorMessage}
+                  </p>
+                )}
+
                 <button
                   type="submit"
-                  className="bg-(--bright-orange) text-[var(--main-color)] py-3 rounded-4xl font-semibold hover:opacity-90 transition"
+                  disabled={isSubmitting}
+                  className="bg-(--bright-orange) text-[var(--main-color)] py-3 rounded-4xl font-semibold hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Register
+                  {isSubmitting ? "Registering..." : "Register"}
                 </button>
 
                 <p className="text-center text-[var(--dark-color)] mt-4">

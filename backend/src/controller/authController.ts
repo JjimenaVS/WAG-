@@ -19,7 +19,7 @@ import { eq } from 'drizzle-orm';
 export const register = async (req: Request, res: Response) => {
     try {
         //1.
-        const { name, email, password, avatarId } = req.body;
+        const { name, email, phone, password, avatarId } = req.body;
 
         // check if user already exists
         const existingUser = await db.query.users.findFirst({
@@ -37,12 +37,14 @@ export const register = async (req: Request, res: Response) => {
         const [user] = await db.insert(users).values({
             name,
             email,
+            phone: phone ?? null,
             password: hashedPassword,
             avatarId: avatarId ?? 'default'
         }).returning({
             id: users.id,
             email: users.email,
             name: users.name,
+            phone: users.phone,
             avatarId: users.avatarId
         });
 
