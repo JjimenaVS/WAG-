@@ -67,7 +67,14 @@ export default function Login() {
 
   return (
     <div>
-      <NavHeader logo="WAG!" options={[]} />
+      <NavHeader
+  logo="WAG!"
+  options={[
+    { label: "Home", path: "/" },
+    { label: "About", path: "/about" },
+    { label: "Blog", path: "/blog" },
+  ]}
+/>
 
       <div className="flex justify-center bg-(--blue-color) pt-2">
         <section className="min-h-[calc(100vh-80px)] flex w-300">

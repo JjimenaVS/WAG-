@@ -5,7 +5,7 @@ import HappyCostumersCards from "./HappyCopstumersCards";
 import ContactForms from "./ContactForms";
 import { aboutImages, services, happyCustomers } from "./aboutData";
 
-import NavBar from "../../ui/NavBar";
+import NavHeader from "../../ui/NavBar";
 import Footer from "../../ui/Footer";
 
 
@@ -25,10 +25,15 @@ export default function AboutDisplay() {
   return (
     <main className="about-page">
       <div className="about-container">
-        <NavBar
-          logo="WAG!"
-          options={["Home", "About", "Services", "Contact"]}
-        />
+
+      <NavHeader
+  logo="WAG!"
+  options={[
+    { label: "Home", path: "/" },
+    { label: "About", path: "/about" },
+    { label: "Blog", path: "/blog" },
+  ]}
+/>
 
         <section className="about-hero" id="home">
           <div className="about-hero-image">
