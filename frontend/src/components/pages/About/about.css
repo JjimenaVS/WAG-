@@ -1,125 +1,137 @@
 .about-page {
-  background-color: #1e1e1e;
+  background-color: #fff7ec;
   min-height: 100vh;
-  padding: 40px 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
   font-family: "Quicksand", sans-serif;
 }
 
-/* Contenedor general para que todo tenga el mismo ancho */
 .about-container {
-  width: 900px;
-  max-width: 90%;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   background-color: #fff7ec;
   overflow: hidden;
 }
 
 /* HERO / ABOUT US */
 .about-hero {
-  min-height: 460px;
+  min-height: 520px;
   background-color: #fff7ec;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 620px 1fr;
   align-items: center;
+  column-gap: 70px;
 
-  padding-bottom: 45px; /* espacio entre el perro azul y la sección del gato */
+  padding: 55px 70px 65px 0;
+  box-sizing: border-box;
 }
 
 .about-hero-image {
-  width: 500px;
-  height: 380px;
+  width: 620px;
+  height: 400px;
 
-  background-color: #9ACCFF;
+  background-color: #9accff;
 
-  border-top-right-radius: 190px;
-  border-bottom-right-radius: 190px;
+  border-top-right-radius: 220px;
+  border-bottom-right-radius: 220px;
 
   position: relative;
   overflow: hidden;
 
   justify-self: start;
-  align-self: end;
+  align-self: center;
 }
 
 .about-hero-image img {
-  height: 100%;
   width: 100%;
+  height: 100%;
 
   object-fit: contain;
   object-position: left bottom;
 
   transform: translate(-25px, 10px);
-
   display: block;
 }
 
 .about-hero-text {
+  max-width: 420px;
+  justify-self: center;
   padding: 40px;
 }
 
 .about-hero-text span {
   color: #f28c38;
-  font-weight: bold;
+  font-weight: 800;
+  font-size: 17px;
 }
 
 .about-hero-text h1 {
   color: #4f79a7;
-  font-size: 42px;
-  line-height: 1.1;
+  font-size: 48px;
+  line-height: 1.08;
   text-transform: uppercase;
-  margin: 15px 0;
+  margin: 16px 0 20px;
   font-weight: 400;
 }
 
 .about-hero-text h1 strong {
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .about-hero-text p {
   color: #333;
-  font-size: 14px;
-  line-height: 1.5;
-  max-width: 330px;
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 380px;
 }
 
 /* OUR MISSION */
 .mission-section {
-  background-color: #9ACCFF;
-  min-height: 330px;
+  background-color: #9accff;
+  min-height: 430px;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
 
-  padding: 50px 70px 0 70px;
+  padding: 70px 70px 0;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+}
+
+.mission-text {
+  max-width: 1180px;
+  justify-self: start;
+  padding-left: 0;
 }
 
 .mission-text h2 {
   color: white;
-  font-weight: 700;
+  font-weight: 900;
   text-transform: uppercase;
-  font-size: 36px;
-  margin-bottom: 20px;
+  font-size: 42px;
+  margin-bottom: 22px;
 }
 
 .mission-text p {
   color: #1e1e1e;
-  max-width: 360px;
+  max-width: 420px;
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .mission-cat {
-  width: 480px;
+  width: 540px;
   max-width: none;
 
   justify-self: end;
   align-self: end;
 
-  margin-right: -70px;
+  margin-right: -40px;
   margin-bottom: 0;
   display: block;
 }
@@ -127,47 +139,51 @@
 /* WHAT CAN YOU DO */
 .services-section {
   background-color: #fff7ec;
-  padding: 60px 70px;
+  padding: 70px 70px 75px;
   text-align: center;
 }
 
 .services-section h2 {
   color: #4f79a7;
-  font-size: 36px;
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: 900;
   text-transform: none;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .services-section > p {
   margin-top: 0;
   color: #666;
+  font-size: 16px;
   font-weight: 500;
 }
 
 .services-list {
-  max-width: 650px;
-  margin: 35px auto 0;
+  max-width: 850px;
+  margin: 40px auto 0;
+
   display: grid;
-  gap: 22px;
+  gap: 24px;
 }
 
 .service-card {
   background-color: #ffd8c2;
-  border-radius: 18px;
-  padding: 18px 24px;
+  border-radius: 22px;
+  padding: 24px 30px;
 
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 24px;
 
   text-align: left;
+
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
 }
 
 .service-icon-circle {
-  width: 72px;
-  height: 72px;
-  min-width: 72px;
+  width: 82px;
+  height: 82px;
+  min-width: 82px;
 
   border-radius: 50%;
   background-color: #ff8848;
@@ -178,27 +194,26 @@
 }
 
 .service-icon-circle img {
-  width: 48px;
-  height: 48px;
+  width: 58px;
+  height: 58px;
   object-fit: contain;
 }
 
 .service-card h3 {
-  margin: 0 0 5px;
+  margin: 0 0 6px;
   color: #1e1e1e;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 19px;
+  font-weight: 800;
 }
 
 .service-card p {
   margin: 0;
   color: #333;
-  font-size: 14px;
-  line-height: 1.35;
+  font-size: 15px;
+  line-height: 1.45;
 }
 
 /* HAPPY CUSTOMERS */
-
 .happy-section {
   background-color: #ff8848;
 
@@ -207,7 +222,7 @@
   background-size: 420px auto !important;
   background-position: center !important;
 
-  padding: 45px 65px 55px;
+  padding: 60px 70px 65px;
   text-align: center;
   color: white;
   position: relative;
@@ -216,17 +231,20 @@
 
 .happy-section h2 {
   color: white;
-  font-size: 32px;
+  font-size: 40px;
   line-height: 1.1;
-  font-weight: 700;
+  font-weight: 900;
   text-transform: none;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
 
   position: relative;
   z-index: 3;
 }
 
 .happy-carousel {
+  max-width: 1180px;
+  margin: 0 auto;
+
   width: 100%;
   position: relative;
   z-index: 3;
@@ -248,19 +266,19 @@
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 70px;
+  gap: 80px;
 
   box-sizing: border-box;
-  padding: 10px 20px 20px 55px;
+  padding: 15px 25px 25px 60px;
 }
 
 .happy-card {
   background-color: #fff7ec;
   color: #1e1e1e;
 
-  min-height: 135px;
-  border-radius: 18px;
-  padding: 28px 28px 28px 95px;
+  min-height: 150px;
+  border-radius: 22px;
+  padding: 30px 32px 30px 105px;
 
   display: flex;
   align-items: center;
@@ -269,12 +287,12 @@
   position: relative;
   z-index: 4;
 
-  box-shadow: 8px 8px 0 rgba(255, 206, 139, 0.8);
+  box-shadow: 8px 8px 0 rgba(255, 206, 139, 0.85);
 }
 
 .happy-card-avatar {
-  width: 120px;
-  height: 120px;
+  width: 125px;
+  height: 125px;
 
   border-radius: 50%;
   background-color: #fff7ec;
@@ -303,17 +321,17 @@
 
 .happy-card-description {
   margin: 0 0 18px;
-  font-size: 15px;
-  line-height: 1.35;
-  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 800;
   color: #1e1e1e;
 }
 
 .happy-card-name {
   margin: 0;
   color: #1e1e1e;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .happy-dots {
@@ -341,75 +359,76 @@
   background-color: white;
 }
 
-
-
 /* CONTACT */
 .contact-section {
   background-color: #fff7ec;
-  padding: 70px 65px 45px;
+  padding: 80px 70px 65px;
 
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: 20px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
   align-items: center;
 
   overflow: visible;
+  box-sizing: border-box;
 }
 
 .contact-text {
   position: relative;
+  max-width: 620px;
+  justify-self: center;
 }
 
 .contact-text h2 {
   color: #4f79a7;
-  font-size: 42px;
-  line-height: 0.95;
-  margin-bottom: 18px;
+  font-size: 46px;
+  line-height: 1;
+  margin-bottom: 20px;
   text-transform: none;
+  font-weight: 500;
 }
 
 .contact-text p {
   color: #1e1e1e;
-  line-height: 1.4;
-  max-width: 380px;
-  font-size: 14px;
+  line-height: 1.45;
+  max-width: 420px;
+  font-size: 16px;
 }
 
 .contact-text img {
-  width: 520px;
+  width: 540px;
   max-width: none;
 
-  margin-top: 25px;
-  margin-left: -80px;
+  margin-top: 35px;
+  margin-left: -40px;
 
   display: block;
 }
 
-/* FORM */
 .contact-form-card {
   background-color: white;
 
   width: 100%;
-  max-width: 320px;
+  max-width: 360px;
   box-sizing: border-box;
 
-  min-height: 350px;
-  padding: 42px 35px;
-  border-radius: 28px;
+  min-height: 390px;
+  padding: 44px 38px;
+  border-radius: 30px;
 
-  justify-self: end;
+  justify-self: center;
 
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form {
   display: grid;
-  gap: 12px;
+  gap: 13px;
 }
 
 .contact-form label {
   color: #1e1e1e;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -419,8 +438,8 @@
   box-sizing: border-box;
 
   border: 1px solid #c9c9c9;
-  border-radius: 20px;
-  padding: 10px 14px;
+  border-radius: 22px;
+  padding: 11px 15px;
 
   outline: none;
   font-size: 14px;
@@ -435,20 +454,20 @@
 
 .contact-form textarea {
   resize: none;
-  min-height: 70px;
+  min-height: 75px;
   border-radius: 24px;
 }
 
 .contact-form button {
-  width: 190px;
+  width: 200px;
   justify-self: center;
 
   border: none;
   background-color: #3da5ff;
   color: white;
 
-  border-radius: 22px;
-  padding: 12px;
+  border-radius: 24px;
+  padding: 13px;
 
   cursor: pointer;
   font-weight: bold;
@@ -465,17 +484,9 @@
   color: #1e1e1e;
   margin: 8px 0 0;
 }
+
 /* RESPONSIVE */
-@media (max-width: 600px) {
-  .about-page {
-    padding: 0;
-  }
-
-  .about-container {
-    width: 100%;
-    max-width: 100%;
-  }
-
+@media (max-width: 900px) {
   .about-hero,
   .mission-section,
   .contact-section {
@@ -484,26 +495,28 @@
   }
 
   .about-hero {
-    padding-bottom: 40px;
+    padding: 45px 28px;
   }
 
   .about-hero-image {
-    justify-content: center;
+    width: 100%;
+    max-width: 420px;
+    height: 310px;
+    justify-self: center;
+    border-radius: 180px;
   }
 
   .about-hero-image img {
-    width: 100%;
-    height: 300px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 150px;
+    transform: translate(0, 10px);
   }
 
   .about-hero-text {
-    padding: 30px;
+    justify-self: center;
+    padding: 30px 0;
   }
 
   .about-hero-text h1 {
-    font-size: 36px;
+    font-size: 38px;
   }
 
   .about-hero-text p,
@@ -517,21 +530,37 @@
   .services-section,
   .happy-section,
   .contact-section {
-    padding: 45px 25px;
+    padding: 50px 28px;
   }
 
   .mission-cat {
     justify-self: center;
-    max-width: 300px;
+    width: 330px;
+    margin-right: 0;
   }
 
-  .happy-cards-container {
-    grid-template-columns: 1fr;
+  .services-list {
+    max-width: 100%;
   }
 
-  .service-card,
-  .happy-card {
+  .service-card {
     flex-direction: column;
     text-align: center;
+  }
+
+  .happy-slide {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding-left: 55px;
+  }
+
+  .contact-text img {
+    width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-form-card {
+    justify-self: center;
   }
 }
