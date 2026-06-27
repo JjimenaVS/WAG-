@@ -1,17 +1,15 @@
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../context/authContext";
 
-interface NavOption {
-  label: string;
-  path: string;
-}
 
 interface NavHeaderProps {
   logo: string;
-  options: NavOption[];
+  variant?: "default" | "auth";
 }
-
 export default function NavHeader(props: NavHeaderProps) {
+  //valor inicial del nav
+  const variant = props.variant ?? "default";
+
   const { user, isAuthenticated, logout } = useAuth();
   const navigate = useNavigate();
 
@@ -30,20 +28,36 @@ export default function NavHeader(props: NavHeaderProps) {
         </div>
 
         {/* Navigation Links */}
-        <div className="flex w-full justify-center">
-          <ul className="hidden items-center gap-5 md:flex">
-            {props.options.map((option) => (
-              <li key={option.path}>
-                <Link
-                  to={option.path}
-                  className="font-bold text-(--dark-text) hover:text-(--orange-color) transition-colors"
-                >
-                  {option.label}
+  {/* Navigation Links - solo en variant default */}
+        {variant !== "auth" && (
+          <div className="flex w-full justify-center">
+            <ul className="hidden items-center gap-5 md:flex">
+              <li>
+                <Link to="/" className="font-bold text-(--dark-text) hover:text-(--orange-color) transition-colors">
+                  Home
                 </Link>
               </li>
-            ))}
-          </ul>
-        </div>
+              <li>
+                <Link to="/care" className="font-bold text-(--dark-text) hover:text-(--orange-color) transition-colors">
+                  Care
+                </Link>
+              </li>
+              <li>
+                <Link to="/places" className="font-bold text-(--dark-text) hover:text-(--orange-color) transition-colors">
+                  Places
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="font-bold text-(--dark-text) hover:text-(--orange-color) transition-colors">
+                  About
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
+ 
+        {/* Spacer cuando es variant auth para mantener el grid */}
+        {variant === "auth" && <div />}
 
         {/* Right side */}
         <div className="flex items-center justify-end gap-4">
@@ -88,7 +102,7 @@ export default function NavHeader(props: NavHeaderProps) {
               </button>
               <button
                 type="button"
-                onClick={() => navigate("/register")}
+                onClick={() => navigate("/signin")}
                 className="bg-(--bright-orange) text-white px-4 py-2 rounded-xl font-semibold hover:opacity-90 transition"
               >
                 Sign Up

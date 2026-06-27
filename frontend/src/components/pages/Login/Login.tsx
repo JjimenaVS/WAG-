@@ -46,8 +46,6 @@ export default function Login() {
 
       login(response.user, response.token);
       navigate("/");
-
-      
     } catch (error) {
       if (error instanceof ApiError) {
         if (error.status === 401) {
@@ -67,14 +65,7 @@ export default function Login() {
 
   return (
     <div>
-      <NavHeader
-  logo="WAG!"
-  options={[
-    { label: "Home", path: "/" },
-    { label: "About", path: "/about" },
-    { label: "Blog", path: "/blog" },
-  ]}
-/>
+      <NavHeader logo="WAG!" variant="auth" />
 
       <div className="flex justify-center bg-(--blue-color) pt-2">
         <section className="min-h-[calc(100vh-80px)] flex w-300">
@@ -98,9 +89,9 @@ export default function Login() {
             </div>
 
             <img
-              src="https://res.cloudinary.com/dnxlfdsh5/image/upload/v1781315264/PerroLog_vriadp.png"
+              src="https://res.cloudinary.com/dnxlfdsh5/image/upload/v1782584282/PerroLog_vriadp_1_1_l2nwbt.png"
               alt="Dog"
-              className="block w-[780px] max-w-none mx-auto pr-40"
+              className="block w-[780px] max-w-none"
             />
           </div>
 
@@ -193,12 +184,15 @@ export default function Login() {
                     disabled={isSubmitting}
                     className="bg-(--blue-color) text-white py-3 rounded-xl font-semibold hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {isSubmitting ? "Signing in..." : "Sign In"}
+                    {isSubmitting ? "login in..." : "Log In"}
                   </button>
 
                   <p className="text-center text-[var(--dark-color)] mt-4">
                     Don't have an account?{" "}
-                    <span className="text-(--orange-color) font-semibold cursor-pointer hover:underline">
+                    <span
+                      className="text-(--orange-color) font-semibold cursor-pointer hover:underline"
+                      onClick={() => navigate("/signin")}
+                    >
                       Create one now!
                     </span>
                   </p>

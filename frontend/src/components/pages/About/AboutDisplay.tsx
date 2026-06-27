@@ -26,15 +26,7 @@ export default function AboutDisplay() {
     <main className="about-page">
       <div className="about-container">
 
-      <NavHeader
-        logo="WAG!"
-        options={[
-          { label: "Home", path: "/" },
-          { label: "About", path: "/about" },
-          { label: "Blog", path: "/blog" },
-          { label: "Help", path: "/about" }, //para la seccion de contact
-        ]}
-      />
+<NavHeader logo="WAG!" />
 
         <section className="about-hero" id="home">
           <div className="about-hero-image">

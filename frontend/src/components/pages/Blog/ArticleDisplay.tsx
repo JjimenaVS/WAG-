@@ -24,7 +24,7 @@ export default function ArticleDisplay() {
     return (
       <main className="blog-page">
         <div className="blog-container">
-          <NavHeader logo="WAG!" options={navOptions} />
+          <NavHeader logo="WAG!" />
 
           <section className="article-detail-section">
             <h1>Article not found</h1>
@@ -43,14 +43,14 @@ export default function ArticleDisplay() {
 
   const recommendedArticles = articles
     .filter(
-      (item) => item.species === article.species && item.slug !== article.slug
+      (item) => item.species === article.species && item.slug !== article.slug,
     )
     .slice(0, 2);
 
   return (
     <main className="blog-page">
       <div className="blog-container">
-        <NavHeader logo="WAG!" options={navOptions} />
+        <NavHeader logo="WAG!" />
 
         <section className="article-detail-section">
           <div className="article-hero">

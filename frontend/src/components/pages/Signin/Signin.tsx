@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavHeader from "../../ui/NavBar";
 import { registerUser, ApiError } from "../../../api/api";
 import { useAuth } from "../../../context/authContext";
+import { useNavigate } from "react-router-dom";
 
 //el import no hace falta como tal pero es para que sea mas legible el codigo por que maneja condicionales, lo mismo con los bg
 const ojoTrue =
@@ -20,6 +21,8 @@ interface UserForm {
 export default function Register() {
   const { login } = useAuth();
 
+  const navigate = useNavigate();
+
   const [user, setUser] = useState<UserForm>({
     name: "",
     email: "",
@@ -32,6 +35,7 @@ export default function Register() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -75,14 +79,7 @@ export default function Register() {
 
   return (
     <div>
-      <NavHeader
-  logo="WAG!"
-  options={[
-    { label: "Home", path: "/" },
-    { label: "About", path: "/about" },
-    { label: "Blog", path: "/blog" },
-  ]}
-/>
+      <NavHeader logo="WAG!" variant="auth" />
 
       <div className="flex justify-center bg-(--orange-color) pt-2">
         <section className="min-h-[calc(100vh-80px)] flex w-300 ">
@@ -250,7 +247,9 @@ export default function Register() {
 
                   <p className="text-center text-[var(--dark-color)] mt-4">
                     Already have an account?{" "}
-                    <span className="text-[var(--bright-blue)] font-semibold cursor-pointer hover:underline">
+                    <span className="text-[var(--bright-blue)] font-semibold cursor-pointer hover:underline"
+                     onClick={() => navigate("/login")}
+                    >
                       Log into it now!
                     </span>
                   </p>
