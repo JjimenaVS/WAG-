@@ -6,14 +6,6 @@ import Footer from "../../ui/Footer";
 import { articles } from "./blogData";
 import "./blog.css";
 
-const navOptions = [
-  { label: "Home", path: "/" },
-  { label: "About", path: "/about" },
-  { label: "Blog", path: "/blog" },
-  { label: "Help", path: "/about" },
-];
-
-const footerOptions = ["Home", "About", "Blog", "Help"];
 
 export default function ArticleDisplay() {
   const { slug } = useParams();
@@ -31,10 +23,7 @@ export default function ArticleDisplay() {
             <Link to="/blog">Go back to blog</Link>
           </section>
 
-          <Footer
-            logo="WAG!"
-            socialMedia={["Instagram", "Facebook"]}
-          />
+
         </div>
       </main>
     );
