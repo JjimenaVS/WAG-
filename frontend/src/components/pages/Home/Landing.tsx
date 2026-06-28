@@ -4,11 +4,10 @@ import LandingHeroBanner from "./LandingHeroBanner";
 import LandingWhy from "./LandingWhy";
 import LandingCardsDisplay from "./LandingCardsDisplay";
 
-interface LandingProps {}
 
-const navOptions = ["Home", "About", "Blog", "Help"];
 
-export default function Landing(props: LandingProps) {
+
+export default function Landing() {
   return (
     <div className="bg-(--primary-color)">
 <NavHeader logo="WAG!" />
@@ -18,7 +17,7 @@ export default function Landing(props: LandingProps) {
 
       <LandingCardsDisplay></LandingCardsDisplay>
 
-      <Footer logo="WAG!" options={navOptions} socialMedia={[]} />
+      <Footer logo="WAG!" socialMedia={[]} />
     </div>
   );
 }

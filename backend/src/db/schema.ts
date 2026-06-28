@@ -27,6 +27,8 @@ export const locations = pgTable("locations", {
   description: text("description"),
   address: text("address").notNull(),
   imageUrl: text("image_url"),
+  phone: text("phone"),
+schedule: text("schedule"),
   category: text("category").notNull(), // ej: "veterinaria", "petshop", "parque"
   created_at: timestamp("created_at").defaultNow().notNull(),
   updated_at: timestamp("updated_at").defaultNow().notNull(),

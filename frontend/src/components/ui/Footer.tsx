@@ -1,6 +1,5 @@
 interface FooterProps {
   logo: string;
-  options: string[];
   socialMedia: string[];
 }
 
@@ -17,14 +16,14 @@ export default function Footer(props: FooterProps) {
         <div className="flex items-center gap-8">
           {/* Instagram */}
           <div className="flex items-center gap-2">
-            <p className="text-m font-bold text-(--dark-text) hover:text-(--orange-color) hover:cursor-pointer">
+            <p className="text-m font-bold text-(--dark-color) hover:text-(--orange-color) hover:cursor-pointer">
               Instagram
             </p>
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-(--dark-text) hover:text-(--orange-color) transition-colors"
+              className="text-(--dark-color) hover:text-(--orange-color) transition-colors"
             >
               <img
                 src="https://res.cloudinary.com/dnxlfdsh5/image/upload/v1781317845/instagram_pjp9zy.svg"
@@ -36,14 +35,14 @@ export default function Footer(props: FooterProps) {
 
           {/* Facebook */}
           <div className="flex items-center gap-2">
-            <p className="text-m font-bold text-(--dark-text)  hover:text-(--orange-color) hover:cursor-pointer">
+            <p className="text-m font-bold text-(--dark-color)  hover:text-(--orange-color) hover:cursor-pointer">
               Facebook
             </p>
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-(--dark-text) hover:text-(--orange-color) transition-colors"
+              className="text-(--dark-color) hover:text-(--orange-color) transition-colors"
             >
               <img
                 src="https://res.cloudinary.com/dnxlfdsh5/image/upload/v1781317845/facebook_tqv8v8.svg"

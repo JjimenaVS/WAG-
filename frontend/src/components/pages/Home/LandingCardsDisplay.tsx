@@ -4,6 +4,8 @@ const background = "https://res.cloudinary.com/dnxlfdsh5/image/upload/v178131526
 
 export default function LandingCardsDisplay() {
 
+    //cambiar a un solo array.
+
     const titles = ["Pet friendly", "Care", "Veterinarians"];
 
     const images = [

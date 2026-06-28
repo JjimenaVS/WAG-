@@ -35,7 +35,7 @@ export default function Register() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -59,7 +59,13 @@ export default function Register() {
       // Guarda la sesión en el AuthContext (persiste en localStorage internamente)
       login(response.user, response.token);
 
+      setSuccessMessage(
+        "User registered successfully! Redirecting to login...",
+      );
 
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
     } catch (error) {
       if (error instanceof ApiError) {
         if (error.status === 409) {
@@ -236,6 +242,11 @@ export default function Register() {
                       {errorMessage}
                     </p>
                   )}
+                  {successMessage && (
+                    <p className="text-green-600 text-sm text-center -mb-2">
+                      {successMessage}
+                    </p>
+                  )}
 
                   <button
                     type="submit"
@@ -247,8 +258,9 @@ export default function Register() {
 
                   <p className="text-center text-[var(--dark-color)] mt-4">
                     Already have an account?{" "}
-                    <span className="text-[var(--bright-blue)] font-semibold cursor-pointer hover:underline"
-                     onClick={() => navigate("/login")}
+                    <span
+                      className="text-[var(--bright-blue)] font-semibold cursor-pointer hover:underline"
+                      onClick={() => navigate("/login")}
                     >
                       Log into it now!
                     </span>

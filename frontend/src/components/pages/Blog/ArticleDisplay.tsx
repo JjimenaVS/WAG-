@@ -33,7 +33,6 @@ export default function ArticleDisplay() {
 
           <Footer
             logo="WAG!"
-            options={footerOptions}
             socialMedia={["Instagram", "Facebook"]}
           />
         </div>
@@ -91,7 +90,6 @@ export default function ArticleDisplay() {
 
         <Footer
           logo="WAG!"
-          options={footerOptions}
           socialMedia={["Instagram", "Facebook"]}
         />
       </div>

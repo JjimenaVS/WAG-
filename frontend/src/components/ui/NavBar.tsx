@@ -33,22 +33,22 @@ export default function NavHeader(props: NavHeaderProps) {
           <div className="flex w-full justify-center">
             <ul className="hidden items-center gap-5 md:flex">
               <li>
-                <Link to="/" className="font-bold text-(--dark-text) hover:text-(--orange-color) transition-colors">
+                <Link to="/" className="font-bold text-(--dark-color) hover:text-(--orange-color) transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/care" className="font-bold text-(--dark-text) hover:text-(--orange-color) transition-colors">
+                <Link to="/care" className="font-bold text-(--dark-color) hover:text-(--orange-color) transition-colors">
                   Care
                 </Link>
               </li>
               <li>
-                <Link to="/places" className="font-bold text-(--dark-text) hover:text-(--orange-color) transition-colors">
+                <Link to="/places" className="font-bold text-(--dark-color) hover:text-(--orange-color) transition-colors">
                   Places
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="font-bold text-(--dark-text) hover:text-(--orange-color) transition-colors">
+                <Link to="/about" className="font-bold text-(--dark-color) hover:text-(--orange-color) transition-colors">
                   About
                 </Link>
               </li>
@@ -69,7 +69,7 @@ export default function NavHeader(props: NavHeaderProps) {
 
           {isAuthenticated ? (
             <div className="flex items-center gap-3">
-              <span className="hidden md:block font-medium text-(--dark-text)">
+              <span className="hidden md:block font-medium text-(--dark-color)">
                 {user?.name}
               </span>
               <button
@@ -96,7 +96,7 @@ export default function NavHeader(props: NavHeaderProps) {
               <button
                 type="button"
                 onClick={() => navigate("/login")}
-                className="font-semibold text-(--dark-text) hover:text-(--orange-color) transition-colors"
+                className="font-semibold text-(--dark-color) hover:text-(--orange-color) transition-colors"
               >
                 Log In
               </button>

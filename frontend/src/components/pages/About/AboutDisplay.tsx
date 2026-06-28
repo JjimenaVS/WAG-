@@ -153,11 +153,7 @@ export default function AboutDisplay() {
           />
         </section>
 
-        <Footer
-         logo="WAG!"
-          options={["Home", "About", "Services", "Contact"]}
-          socialMedia={["Instagram", "Facebook"]}
-          />
+        <Footer logo="WAG!" socialMedia={[]} />
       </div>
     </main>
   );

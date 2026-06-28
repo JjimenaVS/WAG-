@@ -78,3 +78,43 @@ export async function loginUser(payload: LoginPayload): Promise<AuthResponse> {
 
   return handleResponse<AuthResponse>(res);
 }
+
+// Locations
+export interface Location {
+  id: string;
+  name: string;
+  description: string | null;
+  address: string;
+  imageUrl: string | null;
+  category: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface LocationsResponse {
+  locations: Location[];
+}
+
+export async function getLocations(): Promise<LocationsResponse> {
+  const res = await fetch(`${API_URL}/api/locations`);
+  return handleResponse<LocationsResponse>(res);
+}
+
+export async function getLocationsByCategory(category: string): Promise<LocationsResponse> {
+  const res = await fetch(`${API_URL}/api/locations/${category}`);
+  return handleResponse<LocationsResponse>(res);
+}
+
+export interface LocationDetail extends Location {
+  phone: string | null;
+  schedule: string | null;
+}
+
+export interface LocationDetailResponse {
+  location: LocationDetail;
+}
+
+export async function getLocationById(id: string): Promise<LocationDetailResponse> {
+  const res = await fetch(`${API_URL}/api/locations/detail/${id}`);
+  return handleResponse<LocationDetailResponse>(res);
+}
