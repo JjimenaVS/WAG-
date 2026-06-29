@@ -1,14 +1,15 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import NavHeader from "../../ui/NavBar";
 import Footer from "../../ui/Footer";
+import StarRating from "../../ui/StarRating";
 
 import { articles } from "./blogData";
 import "./blog.css";
 
-
 export default function ArticleDisplay() {
   const { slug } = useParams();
+  const navigate = useNavigate();
 
   const article = articles.find((item) => item.slug === slug);
 
@@ -19,11 +20,17 @@ export default function ArticleDisplay() {
           <NavHeader logo="WAG!" />
 
           <section className="article-detail-section">
+            <button
+              type="button"
+              onClick={() => navigate(-1)}
+              className="article-back-button"
+            >
+              ← Back
+            </button>
+
             <h1>Article not found</h1>
             <Link to="/blog">Go back to blog</Link>
           </section>
-
-
         </div>
       </main>
     );
@@ -31,7 +38,7 @@ export default function ArticleDisplay() {
 
   const recommendedArticles = articles
     .filter(
-      (item) => item.species === article.species && item.slug !== article.slug,
+      (item) => item.species === article.species && item.slug !== article.slug
     )
     .slice(0, 2);
 
@@ -41,13 +48,24 @@ export default function ArticleDisplay() {
         <NavHeader logo="WAG!" />
 
         <section className="article-detail-section">
+          <button
+            type="button"
+            onClick={() => navigate(-1)}
+            className="article-back-button"
+          >
+            ← Back
+          </button>
+
           <div className="article-hero">
             <img src={article.image} alt={article.title} />
 
             <div>
               <h1>{article.title}</h1>
               <p className="article-author">Source: WAG team</p>
-              <div className="article-rating">★ ★ ★ ★ ☆</div>
+              <StarRating
+                initialRating={4}
+                onRatingChange={(rating) => console.log("Article rating:", rating)}
+              />
             </div>
           </div>
 
@@ -77,10 +95,7 @@ export default function ArticleDisplay() {
           </div>
         </section>
 
-        <Footer
-          logo="WAG!"
-          socialMedia={["Instagram", "Facebook"]}
-        />
+        <Footer logo="WAG!" socialMedia={["Instagram", "Facebook"]} />
       </div>
     </main>
   );

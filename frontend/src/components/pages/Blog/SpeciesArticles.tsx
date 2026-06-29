@@ -35,20 +35,15 @@ export default function SpeciesArticles() {
   const title =
     species === "dog" ? "Dog" : species === "cat" ? "Cat" : "Others Pets";
 
-    const heroImage =
+  const heroImage =
     species === "dog"
-        ? speciesHeroImages.dog
-        : species === "cat"
-        ? speciesHeroImages.cat
-        : speciesHeroImages.others;
+      ? speciesHeroImages.dog
+      : species === "cat"
+      ? speciesHeroImages.cat
+      : speciesHeroImages.others;
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(event.target.value);
-    setCurrentPage(0);
-  };
-
-  const clearFilter = () => {
-    setSearchText("");
     setCurrentPage(0);
   };
 
@@ -66,18 +61,18 @@ export default function SpeciesArticles() {
         />
 
         <section className="species-articles-section">
-            <h1>{title}</h1>
+          <h1>{title}</h1>
 
-            <div className="species-hero-image">
-                <img src={heroImage} alt={`${title} hero`} />
-            </div>
+          <div className="species-hero-image">
+            <img src={heroImage} alt={`${title} hero`} />
+          </div>
 
-            <p className="species-articles-intro">
-                Our wide range of pet-related articles is designed to provide clear
-                and practical guidance. Whether you are starting your journey as a
-                pet owner or looking to learn more about specific care needs, you
-                will find valuable and reliable information here.
-            </p>
+          <p className="species-articles-intro">
+            Our wide range of pet-related articles is designed to provide clear
+            and practical guidance. Whether you are starting your journey as a
+            pet owner or looking to learn more about specific care needs, you
+            will find valuable and reliable information here.
+          </p>
 
           <div className="article-search-row">
             <div className="article-search">
@@ -90,10 +85,6 @@ export default function SpeciesArticles() {
                 onChange={handleSearchChange}
               />
             </div>
-
-            <button type="button" onClick={clearFilter}>
-              Clear Filter
-            </button>
           </div>
 
           <div className="article-list">

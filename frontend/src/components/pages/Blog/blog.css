@@ -242,7 +242,7 @@
   }
 
   .petOwnersSection {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     text-align: center;
     padding: 35px 28px 0;
   }
@@ -250,6 +250,7 @@
   .petOwnersImage {
     width: 320px;
     height: 350px;
+    justify-self: center;
   }
 
   .blueCircle {
@@ -286,7 +287,6 @@
   }
 }
 
-
 /* SPECIES ARTICLES PAGE */
 .species-articles-section {
   background-color: #fff7ec;
@@ -310,26 +310,24 @@
   color: #1e1e1e;
 }
 
+/* SEARCH BAR */
 .article-search-row {
-  max-width: 1180px;
+  max-width: 900px;
   margin: 0 auto 35px;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  grid-template-columns: 1fr;
+  gap: 0;
 }
 
-.article-search,
-.article-search-row button {
+.article-search {
   height: 40px;
   border: none;
   border-radius: 22px;
   background-color: #ff9b6b;
   color: #1e1e1e;
   font-weight: 700;
-}
 
-.article-search {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -357,13 +355,9 @@
   color: rgba(30, 30, 30, 0.65);
 }
 
+/* CLEAR FILTER BUTTON REMOVED */
 .article-search-row button {
-  cursor: pointer;
-  font-family: "Quicksand", sans-serif;
-}
-
-.article-search-row button:hover {
-  background-color: #ff8848;
+  display: none;
 }
 
 .no-articles-message {
@@ -604,10 +598,163 @@
   display: block;
 }
 
+.article-back-button {
+  border: none;
+  background-color: transparent;
+  color: #ff631d;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  cursor: pointer;
+  margin-bottom: 28px;
+  padding: 0;
+}
+
+.article-back-button:hover {
+  text-decoration: underline;
+}
+
+.article-rating-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.article-rating-summary span {
+  color: #1e1e1e;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.article-comments-section {
+  max-width: 1180px;
+  margin: 0 auto 70px;
+  background-color: #ffd8c2;
+  border-radius: 28px;
+  padding: 35px 40px;
+  box-sizing: border-box;
+}
+
+.article-comments-section h2 {
+  color: #1e1e1e;
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 25px;
+}
+
+.article-comment-form {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.article-comment-form label {
+  color: #1e1e1e;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.article-comment-form textarea {
+  width: 100%;
+  min-height: 95px;
+  box-sizing: border-box;
+  border: 1px solid #c9c9c9;
+  border-radius: 22px;
+  padding: 15px 18px;
+
+  outline: none;
+  resize: none;
+
+
+  font-size: 14px;
+  background-color: #fff7ec;
+}
+
+.article-comment-form textarea:focus {
+  border-color: #ff8848;
+  background-color: white;
+}
+
+.article-comment-form button {
+  width: 180px;
+  border: none;
+  background-color: #ff8848;
+  color: white;
+
+  border-radius: 24px;
+  padding: 12px;
+
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.article-comment-form button:hover {
+  background-color: #ff631d;
+}
+
+.comment-error {
+  color: #b3261e;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.article-comments-list {
+  display: grid;
+  gap: 18px;
+}
+
+.article-comment-card {
+  background-color: #fff7ec;
+  border-radius: 22px;
+  padding: 22px 24px;
+}
+
+.article-comment-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.article-comment-header h3 {
+  color: #1e1e1e;
+  font-size: 17px;
+  font-weight: 900;
+  margin: 0 0 4px;
+}
+
+.article-comment-header p {
+  color: #666;
+  font-size: 13px;
+  margin: 0;
+}
+
+.article-comment-text {
+  color: #1e1e1e;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.no-comments-message {
+  color: #1e1e1e;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+}
+
 /* RESPONSIVE FOR ARTICLES */
 @media (max-width: 900px) {
   .article-search-row {
     grid-template-columns: 1fr;
+  }
+
+  .article-search-row button {
+    display: none;
   }
 
   .article-card {
@@ -625,4 +772,17 @@
   .recommended-card {
     grid-template-columns: 1fr;
   }
+    .article-rating-summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .article-comments-section {
+    padding: 28px 22px;
+  }
+
+  .article-comment-header {
+    flex-direction: column;
+  }
+}
 }
