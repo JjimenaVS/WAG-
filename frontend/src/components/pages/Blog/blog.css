@@ -85,12 +85,12 @@
 .petOwnersSection {
   position: relative;
   display: grid;
-  grid-template-columns: 560px 1fr;
+  grid-template-columns: 600px 1fr;
   align-items: center;
 
   background-color: #ff7a45;
-  overflow: hidden;
   min-height: 430px;
+  overflow: hidden;
 
   padding: 0 70px 0 0;
   box-sizing: border-box;
@@ -98,50 +98,60 @@
 
 .petOwnersImage {
   position: relative;
-  width: 560px;
-  height: 360px;
+  width: 600px;
+  height: 430px;
   flex-shrink: 0;
 
-  background-color: #9accff;
-
-  border-top-right-radius: 190px;
-  border-bottom-right-radius: 190px;
-
-  overflow: hidden;
+  overflow: visible;
   justify-self: start;
   align-self: end;
 }
 
 .blueCircle {
-  display: none;
+  position: absolute;
+  width: 650px;
+  height: 380px;
+
+  background-color: #9accff;
+
+  border-top-right-radius: 220px;
+  border-bottom-right-radius: 220px;
+
+  left: -130px;
+  bottom: 0;
+  z-index: 1;
 }
 
 .catOwnerImg {
   position: absolute;
-  width: 330px;
-  left: 20px;
+  width: 340px;
+
+  left: 70px;
   bottom: 0;
+
   z-index: 2;
 }
 
 .pet-owner-text {
-  max-width: 720px;
-  margin-left: 40px;
+  max-width: 560px;
+  justify-self: start;
+
+  margin-left: -60px;
   color: white;
 }
 
 .pet-owner-text h2 {
   color: white;
-  font-size: 58px;
+  font-size: 52px;
   font-weight: 900;
   line-height: 1;
   text-transform: uppercase;
-  margin: 0 0 26px;
+  margin: 0 0 22px;
 }
 
 .pet-owner-text p {
-  max-width: 620px;
-  font-size: 17px;
+  max-width: 520px;
+  font-size: 15px;
   line-height: 1.6;
   margin-bottom: 16px;
   color: #1e1e1e;
@@ -784,5 +794,4 @@
   .article-comment-header {
     flex-direction: column;
   }
-}
 }
